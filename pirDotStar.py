@@ -1,5 +1,4 @@
 import time
-import random
 import board
 import adafruit_dotstar as dotstar
 import datetime
@@ -12,13 +11,13 @@ dots.fill((0,0,0)) #Turns off all leds
 
 
 GPIO.setwarnings(False)
-GPIO.setup(4,GPIO.IN) #Defines the GPIO pin 4 as an input
+GPIO.setup(4,GPIO.IN) #Defines the GPIO pin 4 as an input for pir
 
 for dot in range(n_dots): #Lights all leds greenn in a "wave" movemonent
 	dots[dot] = (0, 204, 0)
 margin = 20 #Time before the leds turn from red to green
 while True:
-	colorStep = 0 #Resets variables
+	colorStep = 0 #Resets variables for changing colours gradually
 	r = 255
 	g = 0
 	b = 255 - colorStep
